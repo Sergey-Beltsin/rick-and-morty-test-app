@@ -8,6 +8,8 @@ const Container = styled.section`
   display: grid;
   grid-gap: 20px;
 
+  margin-bottom: 20px;
+
   @media (min-width: ${({ theme }) => theme.devices.tablet}px) {
     grid-template-columns: 1fr 1fr;
   }

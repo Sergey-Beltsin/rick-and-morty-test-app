@@ -7,8 +7,10 @@ import "./styles/style.css";
 import { ThemeProvider } from "../shared/lib/theme";
 import { CharactersList } from "../entities/character/ui";
 import { actions } from "../entities/character/model";
+import { Pagination } from "../shared/ui";
+import { usePaginationStore } from "../entities/character/model/model";
 
-const { getCharactersFx } = actions;
+const { getCharactersFx, handleSetCurrentPage } = actions;
 
 const Container = styled.div`
   min-height: 100vh;
@@ -30,6 +32,8 @@ const Main = styled.main`
 `;
 
 export const App: FC = () => {
+  const { pages, currentPage } = usePaginationStore();
+
   useLayoutEffect(() => {
     getCharactersFx();
   }, []);
@@ -39,6 +43,11 @@ export const App: FC = () => {
       <Container>
         <Main>
           <CharactersList />
+          <Pagination
+            pagesCount={pages || 0}
+            currentPage={currentPage}
+            handleChangePage={handleSetCurrentPage}
+          />
         </Main>
       </Container>
     </ThemeProvider>

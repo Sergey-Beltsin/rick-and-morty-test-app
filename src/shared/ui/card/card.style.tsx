@@ -19,7 +19,7 @@ const getColorByStatus = (
 export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.blocks};
   border-radius: 8px;
-  box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.2);
 
   @media (min-width: ${({ theme }) => theme.devices.wideMobile}px) {
     display: flex;
@@ -29,6 +29,7 @@ export const Container = styled.div`
 export const Img = styled.img`
   width: 100%;
 
+  object-fit: cover;
   border-radius: 8px 8px 0 0;
 
   @media (min-width: ${({ theme }) => theme.devices.wideMobile}px) {
