@@ -16,8 +16,8 @@ const getCharactersFx = createEffect(async (page?: number) => {
 });
 
 const getCharactersWithFirstEpisodeFx = createEffect(
-  async (characters: Character[]) => {
-    const result = await Promise.all(
+  async (characters: Character[]) =>
+    Promise.all(
       characters.map(async (item) => {
         const { data } = await getEpisodeById(item.episode[0]);
 
@@ -26,10 +26,7 @@ const getCharactersWithFirstEpisodeFx = createEffect(
           episode: { ...data },
         } as CharacterWithFirstEpisode;
       }),
-    );
-
-    return result;
-  },
+    ),
 );
 
 const $characters = createStore<CharactersStore>([]).on(

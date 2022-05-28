@@ -40,6 +40,10 @@ export const Img = styled.img`
 `;
 
 export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   padding: 10px;
 `;
 
@@ -56,11 +60,13 @@ export const Title = styled.span`
   }
 `;
 
+export const Wrapper = styled.div`
+  margin-bottom: 20px;
+`;
+
 export const StatusWrapper = styled.div`
   display: flex;
   align-items: center;
-
-  margin-bottom: 20px;
 `;
 
 export const Status = styled.span<{ status: CharacterStatus }>`

@@ -12,6 +12,7 @@ import {
   StatusWrapper,
   Text,
   Title,
+  Wrapper,
 } from "./card.style";
 
 type CardProps = {
@@ -34,13 +35,15 @@ export const Card: FC<CardProps> = ({
   <Container>
     <Img src={img} alt={name} />
     <Content>
-      <Title>{name}</Title>
-      <StatusWrapper>
-        <Status status={status} />
-        <StatusText>
-          {status} - {species}
-        </StatusText>
-      </StatusWrapper>
+      <Wrapper>
+        <Title>{name}</Title>
+        <StatusWrapper>
+          <Status status={status} />
+          <StatusText>
+            {status} - {species}
+          </StatusText>
+        </StatusWrapper>
+      </Wrapper>
       <Block>
         <BlockLabel>Last known location:</BlockLabel>
         <Text>{location}</Text>
